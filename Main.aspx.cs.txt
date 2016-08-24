@@ -1,0 +1,30 @@
+﻿//Project: Events
+//Description: Illustrates the order in which events are executed on the server and
+//            the AutoPostback property of controls
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Main : System.Web.UI.Page
+{
+      
+    protected void btnOK_Click(object sender, EventArgs e)
+    {
+        lstEvents.Items.Add("Button Click");
+    }
+
+    
+    protected void txtName_TextChanged(object sender, EventArgs e)
+    {
+        lstEvents.Items.Add("TextChanged");
+
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        lstEvents.Items.Add("Page_Load");
+    }
+}
